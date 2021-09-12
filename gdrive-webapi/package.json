@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
+    "folder": "if not exist downloads mkdir downloads",
+    "start": "npm run folder && node src/index.js",
+    "prod": "npm run folder && set NODE_ENV=production && node src/index.js",
     "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --runInBand",
     "test:watch": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --watchAll --runInBand",
     "test:cov": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --no-cache --runInBand --coverage"
